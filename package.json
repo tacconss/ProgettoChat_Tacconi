@@ -17,7 +17,11 @@
   "homepage": "https://github.com/tacconss/ProgettoChat_Tacconi#readme",
   "description": "",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "express": "^5.1.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "path": "^0.12.7",
     "socket.io": "^4.8.1"
   }
 }
