@@ -61,9 +61,9 @@ io.on('connection', (socket) => {
 
        
         for (let i = 0; i < userList.length; i++) {
-            // Controlliamo se l'ID del socket dell'utente corrente corrisponde a quello disconnesso
+          
             if (userList[i].socketId === socket.id) {
-                // Utente trovato!
+             
                 userFound = true;
                 username = userList[i].name; 
 
