@@ -11,15 +11,17 @@ const messages = [];
 let username = null;
 const socket = io();
 
-// Funzione per mostrare la modale del nome utente
+// Funzione per mostrare la modale del nome utente (MODIFICATA)
 const showUsernameModal = () => {
-  usernameModal.style.display = "flex";
-};
+    // Aggiunge la classe 'visible' per mostrare la modale
+    usernameModal.classList.add("visible");
+  };
 
-// Funzione per nascondere la modale del nome utente
+// Funzione per nascondere la modale del nome utente (MODIFICATA)
 const hideUsernameModal = () => {
-  usernameModal.style.display = "none";
-};
+    // Rimuove la classe 'visible' per nascondere la modale
+    usernameModal.classList.remove("visible");
+  };
 
 // Gestiamo l'invio del nome utente
 setUsernameButton.onclick = () => {
@@ -28,24 +30,23 @@ setUsernameButton.onclick = () => {
     username = enteredUsername;
     socket.emit("setUsername", username); // Invia il nome utente al server
     hideUsernameModal();
-    input.disabled = false;
-    button.disabled = false;
+   
     socket.emit("list"); // Richiedi la lista degli utenti dopo essersi connesso
-  } else {
-    alert("Inserisci un nome utente valido.");
-  }
+  } 
 };
 
 // Mostra la modale all'avvio
 showUsernameModal();
 
-// Gestiamo l'invio del messaggio
+
+// Gestiamo l'invio del messaggio rifare con bottone.onclick
 input.onkeydown = (event) => {
   if (event.keyCode === 13 && username) {
     event.preventDefault();
     button.click();
   }
 }
+
 
 button.onclick = () => {
   if (username && input.value.trim()) {
@@ -78,6 +79,8 @@ const renderChat = () => {
   window.scrollTo(0, document.body.scrollHeight);
 }
 
+
+
 // Funzione per visualizzare la lista degli utenti
 const renderUserList = (userList) => {
   let html = "";
@@ -90,6 +93,5 @@ const renderUserList = (userList) => {
 // Disconnessione
 socket.on('disconnect', () => {
   console.log('Disconnesso dal server');
-  input.disabled = true;
-  button.disabled = true;
+  
 });
