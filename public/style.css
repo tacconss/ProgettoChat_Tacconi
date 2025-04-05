@@ -1,6 +1,4 @@
-/* style.css */
 
-/* Stili per la modale */
 #usernameModal {
     display: flex;
     position: fixed;
@@ -12,19 +10,19 @@
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    visibility: hidden; /* Nascosto di default */
+    visibility: hidden; 
     opacity: 0;
-    /* Transizione per un effetto fade (opzionale ma consigliato) */
-    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; /* Ritarda visibility quando scompare */
+    
+    transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s; 
   }
   
   #usernameModal.visible {
-     visibility: visible; /* Rende visibile */
+     visibility: visible; 
      opacity: 1;
-     transition: opacity 0.3s ease-in-out; /* Transizione solo per opacity quando appare */
+     transition: opacity 0.3s ease-in-out; 
   }
   
-  /* Stili interni della modale */
+
   .modal-content {
     background-color: #fefefe;
     padding: 20px;
@@ -34,7 +32,7 @@
     border-radius: 5px;
   }
   
-  /* Stili per la lista utenti */
+  
   #userListContainer {
     margin-top: 20px;
     border: 1px solid #ccc;
